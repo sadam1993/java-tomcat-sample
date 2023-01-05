@@ -15,9 +15,7 @@ pipeline {
                     archiveArtifacts artifacts: '**/*.war'
                 }
             }
-        }
-    }
-
+ 
       }
              stage('Deploy to Staging Environment'){
             steps{
@@ -32,5 +30,6 @@ pipeline {
                     input message:'Approve PRODUCTION Deployment?'
                 }
                 build job: 'deploy-application-production-environment-pipeline'
-           
+            }
+        }
 
